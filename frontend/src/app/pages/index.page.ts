@@ -1,14 +1,10 @@
-import { Component, OnInit, signal } from '@angular/core';
+import { Component, OnInit, } from '@angular/core';
 
 @Component({
   selector: 'app-home',
-  template: `<pre>{{ data() }}</pre>`,
+  template: `Home`,
 })
 export class HomePage implements OnInit {
-    data = signal<unknown | null>(null);
 
-    async ngOnInit() {
-      const res = await fetch('http://localhost:5000/weatherforecast/');
-      this.data.set(await res.text()); 
-  }
+    async ngOnInit() {}
 }
